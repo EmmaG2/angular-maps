@@ -1,1 +1,13 @@
-<p>menu works!</p>
+<a class="button" (click)="headerDown()">
+  <img src="../../../assets/menu-icon.svg" [ngClass]="isDown ? 'logo--black' : ''" width="40px">
+</a>
+<header class="header" [ngClass]="isDown ? 'header--down' : ''" #header>
+  <img src="../../../assets/maps-icon.svg" alt="maps" width="55px">
+  <ul class="menu">
+    <li *ngFor="let item of menuItems" (click)="headerDown()" routerLinkActive="menu__item--active" class="menu__item">
+      <a [routerLink]="[item.ruta]" class="menu__link">
+        {{item.nombre}}
+      </a>
+    </li>
+  </ul>
+</header>
