@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import * as mapboxgl from 'mapbox-gl';
 
 @Component({
@@ -6,12 +7,16 @@ import * as mapboxgl from 'mapbox-gl';
   templateUrl: './full-screen.component.html',
   styleUrls: ['./full-screen.component.scss']
 })
-export class FullScreenComponent implements AfterViewInit {
+export class FullScreenComponent implements AfterViewInit, OnInit {
 
   @ViewChild('map') MapRef!: ElementRef;
   mapa!: mapboxgl.Map;
 
-  constructor() { }
+  constructor(private title: Title) { }
+
+  ngOnInit(): void {
+    this.title.setTitle('Full Screen - Angular Maps')
+  }
 
   ngAfterViewInit(): void {
     this.mapa = new mapboxgl.Map({
