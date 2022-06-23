@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 
@@ -6,12 +7,16 @@ import * as mapboxgl from 'mapbox-gl';
   templateUrl: './zoom-range.component.html',
   styleUrls: ['./zoom-range.component.scss']
 })
-export class ZoomRangeComponent implements AfterViewInit {
+export class ZoomRangeComponent implements AfterViewInit, OnInit {
 
   @ViewChild('map') MapaRef!: ElementRef;
   mapa!: mapboxgl.Map;
 
-  constructor() {}
+  constructor(private title: Title) {}
+
+  ngOnInit(): void {
+    this.title.setTitle('Zoom Range - Angular Maps')
+  }
 
   ngAfterViewInit(): void {
 
@@ -26,8 +31,7 @@ export class ZoomRangeComponent implements AfterViewInit {
   }
 
   zoomOut() {
-    console.log('zoom out', this.MapaRef);
-    // this.mapa.zoomOut();
+    this.mapa.zoomOut();
   }
 
   zoomIn() {
