@@ -1,1 +1,23 @@
-<p>zoom-range works!</p>
+<div #map class="mapa"></div>
+
+
+<div class="row">
+  <div>
+    <label class="label">
+      zoom: 16
+      - Lng, Lat: [123, 456]
+    </label><br>
+    <div class="gap">
+      <input type="range" class="slider">
+    </div>
+  </div>
+
+  <div class="buttons-container">
+    <button class="button" (click)="zoomOut()">
+      -
+    </button>
+    <button class="button float-end" (click)="zoomIn()">
+      +
+    </button>
+  </div>
+</div>
