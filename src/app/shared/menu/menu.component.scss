@@ -42,7 +42,7 @@
   }
 
   &__item--active {
-    background-color: colors.$Pink;
+    background-color: colors.$RedPink;
   }
 }
 
@@ -52,7 +52,7 @@
 
 @media (hover: hover) {
   .menu__item:hover {
-    background-color: colors.$RedPink;
+    background-color: colors.$Pink;
   }
 }
 
