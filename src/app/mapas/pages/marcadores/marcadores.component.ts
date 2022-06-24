@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -6,12 +6,16 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './marcadores.component.html',
   styleUrls: ['./marcadores.component.scss']
 })
-export class MarcadoresComponent implements OnInit {
+export class MarcadoresComponent implements OnInit, OnDestroy {
 
   constructor(private title: Title) { }
 
   ngOnInit(): void {
     this.title.setTitle('Marcadores - Angular Maps')
+  }
+
+  ngOnDestroy(): void {
+    console.clear()
   }
 
 }
