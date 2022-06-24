@@ -3,7 +3,7 @@
 @use 'mixins';
 
 .row {
-  width: 350px;
+  width: 380px;
   background-color: colors.$White;
   border-radius: 5px;
   bottom: 50px;
@@ -75,5 +75,9 @@
     width: 270px;
     bottom: 50px;
     left: 25px;
+  }
+
+  label {
+    font-size: 13px;
   }
 }

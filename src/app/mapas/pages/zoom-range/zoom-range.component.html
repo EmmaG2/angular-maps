@@ -4,16 +4,25 @@
 <div class="row">
   <div>
     <label class="label">
-      zoom: 16
-      - Lng, Lat: [123, 456]
+      zoom: {{ getZoomPage() | number: '2.2-2' }}
+      - Lng, Lat: [{{ center[0] | number: '3.2-2' }}, {{ center[1] | number: '2.2-2'}} ]
     </label><br>
     <div class="gap">
-      <input type="range" class="slider">
+      <input
+      type="range"
+      class="slider"
+      [value]="getZoomPage()"
+      min="2"
+      max="17"
+      (input)="zoomCambio( zoomInput.value)"
+      #zoomInput>
     </div>
   </div>
 
   <div class="buttons-container">
-    <button class="button" (click)="zoomOut()">
+    <button
+    class="button"
+    (click)="zoomOut()">
       -
     </button>
     <button class="button float-end" (click)="zoomIn()">
