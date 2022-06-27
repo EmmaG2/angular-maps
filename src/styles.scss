@@ -324,19 +324,10 @@ textarea {
   /* 2 */
 }
 
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
 
 [type="search"] {
   -webkit-appearance: textfield;
@@ -345,10 +336,6 @@ textarea {
   /* 2 */
 }
 
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
@@ -356,11 +343,6 @@ textarea {
 input {
   all: unset;
 }
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
 
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
@@ -411,4 +393,8 @@ template {
 .mapa {
   width: 100%;
   height: 100%;
+}
+
+li {
+  list-style: none;
 }
