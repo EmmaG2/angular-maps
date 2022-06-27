@@ -1,1 +1,16 @@
+<ul class="markers">
+  <li
+  class="markers--item"
+  (click)="agregarMarcador()">
+    + Agregar
+  </li>
+  <li
+  class="markers--item markers--item__white"
+  (click)="goToMark()"
+  *ngFor="let marker of markersArray; let i = index"
+  [style.background-color]="marker.color"
+  >
+    Marker {{ i + 1 }}
+</ul>
+
 <div #map class="mapa"></div>
