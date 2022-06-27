@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  token: 'pk.eyJ1IjoidGhpc2lzZW1tYSIsImEiOiJjbDRuZ2s5am8wOXR2M2Ztcmp1OXNzeHB4In0.o9s9IBH8MjomiONMwhEZ_g'
+  token: 'pk.eyJ1IjoidGhpc2lzZW1tYSIsImEiOiJjbDRuZ2s5am8wOXR2M2Ztcmp1OXNzeHB4In0.o9s9IBH8MjomiONMwhEZ_g',
+  mapStyle: 'mapbox://styles/mapbox/streets-v11'
 };
 
 /*
