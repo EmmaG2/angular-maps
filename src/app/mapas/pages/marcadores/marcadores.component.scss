@@ -1,5 +1,6 @@
 @use 'colors';
 @use 'shadows';
+@use 'mixins';
 
 .markers {
   background-color: colors.$White;
@@ -13,14 +14,62 @@
   box-shadow: shadows.$Shadow1;
 
   &--item {
+    display: flex;
+    justify-content: center;
     border-radius: 5px;
     padding: .5em 1em;
     margin: .5em 0 0 0;
     cursor: pointer;
+    transition: background-color 1s ease;
+  }
+}
 
-    &__white {
-      color: colors.$White;
-    }
+.add {
+  color: colors.$White;
+  background-color: colors.$RedPink;
+  padding: 4px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+}
+
+.agregar {
+  margin-top: 4px;
+  margin-left: 5px;
+}
+
+.modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, .4);
+  transition: background 200ms ease;
+  padding: 3em;
+  text-align: center;
+
+  &__title {
+    color: colors.$RedPink;
+    font-weight: bolder;
+  }
+
+  &__content {
+    background-color: colors.$White;
+    box-shadow: shadows.$Shadow1;
+    padding: .5em;
+    border-radius: 5px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__button {
+    margin: 1em;
+    @include mixins.button(colors.$RedPink, colors.$RedPinkBlackL)
   }
 }
 
@@ -28,5 +77,11 @@
   .markers {
     top: .2em;
     right: .2em;
+  }
+}
+
+@media (hover: hover) {
+  .markers--item:hover {
+    background-color: colors.$LightGray;
   }
 }
