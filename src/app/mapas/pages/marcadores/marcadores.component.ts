@@ -126,7 +126,6 @@ export class MarcadoresComponent implements OnInit, OnDestroy, AfterViewInit {
 
   public ocultarModal(): void {
     this.showModal = false;
-
   }
 
   public borrarMarcador(e: MouseEvent, i: number): void {
