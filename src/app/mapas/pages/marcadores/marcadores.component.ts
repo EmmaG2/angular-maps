@@ -133,7 +133,8 @@ export class MarcadoresComponent implements OnInit, OnDestroy, AfterViewInit {
     e.preventDefault();
 
     this.markersArray[i].marker?.remove();
-    this.markersArray.splice(i, 1)
+    this.markersArray.splice(i, 1);
+    this.guardarMarcadores();
   }
 
 }
