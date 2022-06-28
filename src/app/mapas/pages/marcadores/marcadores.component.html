@@ -1,16 +1,30 @@
 <ul class="markers">
   <li
-  class="markers--item"
+  class="markers--item markers--item__add"
   (click)="agregarMarcador()">
-    + Agregar
+    <div class="add">+</div> <span class="agregar">Agregar</span>
   </li>
   <li
-  class="markers--item markers--item__white"
-  (click)="goToMark()"
+  class="markers--item"
   *ngFor="let marker of markersArray; let i = index"
   [style.background-color]="marker.color"
+  [style.color]="'#FFFFFF'"
+  (click)="goToMark(marker.marker!)"
+  (contextmenu)="borrarMarcador( $event, i )"
   >
     Marker {{ i + 1 }}
 </ul>
+
+<section *ngIf="showModal" class="modal">
+  <article class="modal__content">
+    <h1 class="modal__title">Error</h1>
+    <h2 class="modal__subtitle">Solo se pueden agregar 8 marcadores al mapa</h2>
+
+    <p class="modal__text">Solo se puedan añadir 8 marcadores. Haz click derecho para borrar un marcador.</p>
+    <div class="modal__buttons">
+      <a class="modal__button" (click)="ocultarModal()">Volver</a>
+    </div>
+  </article>
+</section>
 
 <div #map class="mapa"></div>
