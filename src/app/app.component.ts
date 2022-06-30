@@ -4,7 +4,7 @@ import * as mapboxgl from 'mapbox-gl';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 @Component({
-  selector: 'app-root',
+  selector: 'ez-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

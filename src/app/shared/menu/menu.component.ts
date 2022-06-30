@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 interface MenuItem {
   ruta: string,
@@ -11,17 +11,13 @@ interface MenuItem {
 })
 export class MenuComponent {
 
-  @ViewChild('header') header!: ElementRef;
-
-  constructor(private renderer2: Renderer2) {}
-
-  isDown: boolean = false;
-
-  headerDown() {
+  public headerDown() {
     this.isDown = !this.isDown
   }
 
-  menuItems: MenuItem[] = [
+  public isDown: boolean = false;
+
+  public menuItems: MenuItem[] = [
     {
       ruta: '/mapas/full-screen',
       nombre: 'Full Screen'

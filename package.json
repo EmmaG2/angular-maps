@@ -10,7 +10,8 @@
     "dev:ssr": "ng run AngularMaps:serve-ssr",
     "serve:ssr": "node dist/AngularMaps/server/main.js",
     "build:ssr": "ng build && ng run AngularMaps:server",
-    "prerender": "ng run AngularMaps:prerender"
+    "prerender": "ng run AngularMaps:prerender",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +33,11 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~14.0.4",
+    "@angular-eslint/builder": "14.0.0",
+    "@angular-eslint/eslint-plugin": "14.0.0",
+    "@angular-eslint/eslint-plugin-template": "14.0.0",
+    "@angular-eslint/schematics": "14.0.0",
+    "@angular-eslint/template-parser": "14.0.0",
     "@angular/cli": "~14.0.4",
     "@angular/compiler-cli": "~14.0.4",
     "@nguniversal/builders": "^14.0.2",
@@ -39,6 +45,9 @@
     "@types/jasmine": "~3.10.0",
     "@types/mapbox-gl": "^2.7.3",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "@typescript-eslint/parser": "5.29.0",
+    "eslint": "^8.18.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
