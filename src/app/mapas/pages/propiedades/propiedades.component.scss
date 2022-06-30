@@ -2,43 +2,40 @@
 @use 'shadows';
 
 .header {
-  width: 100%;
-  padding-top: 5em;
   padding-left: 1em;
   padding-right: 1em;
+  padding-top: 5em;
+  width: 100%;
 }
 
 .cards {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   &__card {
-    width: 250px;
+    background-color: colors.$White;
+    border-radius: 5px;
+    box-shadow: shadows.$Shadow1;
     height: 470px;
     margin: 10px;
-    background-color: colors.$White;
-    box-shadow: shadows.$Shadow1;
-    border-radius: 5px;
+    width: 250px;
   }
 
   &__header {
-    width: 250px;
     height: 250px;
+    width: 250px;
   }
 
   &__img-container {
-    width: inherit;
     height: inherit;
+    width: inherit;
   }
 
   &__image {
-    object-fit: cover;
-    width: inherit;
     height: inherit;
-    border-radius: 5px;
-    z-index: -10;
+    width: inherit;
   }
 
   &__content {
@@ -46,9 +43,9 @@
   }
 
   &__title {
-    margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
+    margin: 0;
 
     &::first-letter {
       color: colors.$RedPink;
@@ -73,29 +70,4 @@
   .header {
     padding-top: 3em;
   }
-
-  // .cards {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   flex-wrap: wrap;
-  //   flex-direction: column;
-  //   width: 100%;
-  //   padding-left: 1em;
-  //   padding-right: 1em;
-
-  //   &__card {
-  //     width: inherit;
-  //     margin-left: 0;
-  //     margin-right: 0;
-  //   }
-
-  //   &__header {}
-
-  //   &__img-container {}
-
-  //   &__image {}
-
-  //   &__content {}
-  // }
 }

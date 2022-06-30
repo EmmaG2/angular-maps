@@ -8,8 +8,8 @@
 }
 
 html {
-  line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  line-height: 1.15;
 }
 
 h1,
@@ -32,18 +32,13 @@ main {
 
 hr {
   box-sizing: content-box;
-  /* 1 */
   height: 0;
-  /* 1 */
   overflow: visible;
-  /* 2 */
 }
 
 pre {
   font-family: monospace, monospace;
-  /* 1 */
   font-size: 1em;
-  /* 2 */
 }
 
 a {
@@ -52,11 +47,8 @@ a {
 
 abbr[title] {
   border-bottom: none;
-  /* 1 */
   text-decoration: underline;
-  /* 2 */
   text-decoration: underline dotted;
-  /* 2 */
 }
 
 b,
@@ -68,9 +60,7 @@ code,
 kbd,
 samp {
   font-family: monospace, monospace;
-  /* 1 */
   font-size: 1em;
-  /* 2 */
 }
 
 small {
@@ -108,24 +98,18 @@ optgroup,
 select,
 textarea {
   font-family: inherit;
-  /* 1 */
   font-size: 100%;
-  /* 1 */
   line-height: 1.15;
-  /* 1 */
   margin: 0;
-  /* 2 */
 }
 
 button,
 input {
-  /* 1 */
   overflow: visible;
 }
 
 button,
 select {
-  /* 1 */
   text-transform: none;
 }
 
@@ -157,17 +141,11 @@ fieldset {
 
 legend {
   box-sizing: border-box;
-  /* 1 */
   color: inherit;
-  /* 2 */
   display: table;
-  /* 1 */
   max-width: 100%;
-  /* 1 */
   padding: 0;
-  /* 3 */
   white-space: normal;
-  /* 1 */
 }
 
 progress {
@@ -181,9 +159,7 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
-  /* 1 */
   padding: 0;
-  /* 2 */
 }
 
 [type="number"]::-webkit-inner-spin-button,
@@ -193,9 +169,7 @@ textarea {
 
 [type="search"] {
   -webkit-appearance: textfield;
-  /* 1 */
   outline-offset: -2px;
-  /* 2 */
 }
 
 [type="search"]::-webkit-search-decoration {
@@ -208,18 +182,12 @@ input {
 
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
-  /* 1 */
   font: inherit;
-  /* 2 */
 }
 
 details {
   display: block;
 }
-
-/*
- * Add the correct display in all browsers.
- */
 
 summary {
   display: list-item;
@@ -245,6 +213,6 @@ body {
 
 #mapa,
 .mapa {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }

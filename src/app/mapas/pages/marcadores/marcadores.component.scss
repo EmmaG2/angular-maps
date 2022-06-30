@@ -6,48 +6,49 @@
   background-color: colors.$White;
   border-radius: 5px;
   position: fixed;
-  z-index: 2;
-  padding: 1em 20px;
-  margin: 1em 2em;
-  top: 5em;
-  right: 1em;
   box-shadow: shadows.$Shadow1;
+  margin: 1em 2em;
+  padding: 1em 20px;
+  right: 1em;
+  top: 5em;
+  z-index: 2;
 
-  &--item {
+  &__item {
+    border-radius: 5px;
+    cursor: pointer;
     display: flex;
     justify-content: center;
-    border-radius: 5px;
-    padding: .5em 1em;
     margin: .5em 0 0 0;
-    cursor: pointer;
+    padding: .5em 1em;
     transition: background-color 1s ease;
+  }
+
+  &__add {
+    background-color: colors.$RedPink;
+    border-radius: 50%;
+    color: colors.$White;
+    height: 25px;
+    padding: 4px;
+    text-align: center;
+    width: 25px;
+
+  }
+
+  &__agregar {
+    margin-left: 5px;
+    margin-top: 4px;
   }
 }
 
-.add {
-  color: colors.$White;
-  background-color: colors.$RedPink;
-  padding: 4px;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  text-align: center;
-}
-
-.agregar {
-  margin-top: 4px;
-  margin-left: 5px;
-}
-
 .modal {
-  position: fixed;
+  background-color: rgba(0, 0, 0, .4);
   height: 100%;
+  position: fixed;
+  padding: 3em;
+  transition: background 200ms ease;
+  text-align: center;
   width: 100%;
   z-index: 200;
-  background-color: rgba(0, 0, 0, .4);
-  transition: background 200ms ease;
-  padding: 3em;
-  text-align: center;
 
   &__title {
     color: colors.$RedPink;
@@ -56,32 +57,32 @@
 
   &__content {
     background-color: colors.$White;
+    border-radius: 5px;
     box-shadow: shadows.$Shadow1;
     padding: .5em;
-    border-radius: 5px;
   }
 
   &__buttons {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 
   &__button {
+    @include mixins.button(colors.$RedPink, colors.$RedPinkBlackL);
     margin: 1em;
-    @include mixins.button(colors.$RedPink, colors.$RedPinkBlackL)
   }
 }
 
 @media screen and (max-width: 729px) {
   .markers {
     top: .2em;
-    right: .2em;
+    right: .1.7em;
   }
 }
 
 @media (hover: hover) {
-  .markers--item:hover {
+  .markers__item:hover {
     background-color: colors.$LightGray;
   }
 }
