@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AppComponent implements OnInit {
 
-  static isBrowser = new BehaviorSubject<boolean>(true);
+  static isBrowser = new BehaviorSubject<any>(null);
 
   constructor(@Inject(PLATFORM_ID) private platformId: any) {
     AppComponent.isBrowser.next(isPlatformBrowser(platformId))
