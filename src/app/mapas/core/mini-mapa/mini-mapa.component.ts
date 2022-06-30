@@ -18,17 +18,18 @@ export class MiniMapaComponent implements AfterViewInit {
 
   @Input() lngLat: [number, number] = [0, 0];
   @ViewChild('mapa') mapaRef!: ElementRef;
+
   constructor() { }
 
   ngAfterViewInit(): void {
 
     const mapa = new mapboxgl.Map({
       container: this.mapaRef.nativeElement,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: environment.mapStyle,
       accessToken: environment.token,
       center: this.lngLat,
-      zoom: 17,
-      interactive: false
+      zoom: 14,
+      interactive: false,
     })
 
     new mapboxgl.Marker({
