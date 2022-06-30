@@ -5,7 +5,6 @@ import * as mapboxgl from 'mapbox-gl';
 @Component({
   selector: 'ez-full-screen',
   templateUrl: './full-screen.component.html',
-  styleUrls: ['./full-screen.component.scss']
 })
 export class FullScreenComponent implements AfterViewInit, OnInit, OnDestroy {
 
