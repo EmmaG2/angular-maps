@@ -1,10 +1,10 @@
 <ul class="markers">
   <li
-  class="markers--item markers--item__add"
+  class="markers__item"
   (click)="agregarMarcador()">
-    <div class="add">+</div> <span class="agregar">Agregar</span>
+    <div class="markers__add">+</div> <span class="markers__agregar">Agregar</span>
   <li
-  class="markers--item"
+  class="markers__item"
   *ngFor="let marker of markersArray; let i = index"
   [style.background-color]="marker.color"
   [style.color]="'#FFFFFF'"
@@ -14,7 +14,7 @@
     Marker {{ i + 1 }}
 
   <li
-  class="markers--item"
+  class="markers__item"
   (click)="borrarTodo()">Borrar Todo
 </ul>
 

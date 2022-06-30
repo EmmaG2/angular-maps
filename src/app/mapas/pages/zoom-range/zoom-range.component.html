@@ -1,16 +1,16 @@
 <div #map class="mapa"></div>
 
 
-<div class="row">
+<div class="control">
   <div>
-    <label class="label">
+    <label class="control__label">
       zoom: {{ getZoomPage() | number: '2.2-2' }}
       - Lng, Lat: [{{ center[0] | number: '3.2-2' }}, {{ center[1] | number: '2.2-2'}} ]
     </label><br>
-    <div class="gap">
+    <div>
       <input
       type="range"
-      class="slider"
+      class="control__slider"
       [value]="getZoomPage()"
       min="2"
       max="17"
@@ -19,13 +19,13 @@
     </div>
   </div>
 
-  <div class="buttons-container">
+  <div class="control__buttons">
     <button
-    class="button"
+    class="control__button"
     (click)="zoomOut()">
       -
     </button>
-    <button class="button float-end" (click)="zoomIn()">
+    <button class="control__button  control__float-end" (click)="zoomIn()">
       +
     </button>
   </div>
