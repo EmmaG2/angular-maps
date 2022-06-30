@@ -7,6 +7,7 @@ import { MarcadoresComponent } from './pages/marcadores/marcadores.component';
 import { ZoomRangeComponent } from './pages/zoom-range/zoom-range.component';
 import { PropiedadesComponent } from './pages/propiedades/propiedades.component';
 import { SharedModule } from '../shared/shared.module';
+import { LocalStorageService } from './pages/marcadores/local-storage.service';
 
 
 
@@ -22,6 +23,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     MapasRoutingModule,
     SharedModule
-  ]
+  ],
+  providers: [LocalStorageService]
 })
 export class MapasModule { }
