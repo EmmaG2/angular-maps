@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-maps",
+            "outputPath": "dist/AngularMaps/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -106,9 +106,76 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/AngularMaps/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/app/sass"
+              ]
+            },
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "AngularMaps:build:development",
+              "serverTarget": "AngularMaps:server:development"
+            },
+            "production": {
+              "browserTarget": "AngularMaps:build:production",
+              "serverTarget": "AngularMaps:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "AngularMaps:build:production",
+              "serverTarget": "AngularMaps:server:production"
+            },
+            "development": {
+              "browserTarget": "AngularMaps:build:development",
+              "serverTarget": "AngularMaps:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
   },
-  "defaultProject": "AngularMaps"
+  "defaultProject": "AngularMaps",
+  "cli": {
+    "analytics": "e973df0b-7e25-49ae-b309-185bf0b0f59a"
+  }
 }
