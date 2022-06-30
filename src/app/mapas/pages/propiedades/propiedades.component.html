@@ -1,1 +1,33 @@
-<p>propiedades works!</p>
+<header class="header">
+  <h1>Propiedades</h1>
+  <hr>
+</header>
+
+<main>
+  <section class="cards">
+    <article
+    class="cards__card"
+    *ngFor="let propiedad of propiedades">
+      <header class="cards__header">
+        <!-- <picture class="cards__img-container">
+          <img
+          class="cards__image"
+          src="https://somoskudasai.com/wp-content/uploads/2021/08/d30268-478-40a2b806b077f213b2ce-6.png">
+        </picture> -->
+        <ez-mini-mapa [lngLat]="propiedad.lngLat" class="cards__image"></ez-mini-mapa>
+      </header>
+      <div class="cards__content">
+        <h1 class="cards__title"> {{ propiedad.titulo }} </h1>
+        <h2 class="cards__subtitle"></h2>
+
+        <p class="cards__text">{{ propiedad.descripcion }}</p>
+      </div>
+    </article>
+
+
+  </section>
+</main>
+
+
+<ez-footer></ez-footer>
+
