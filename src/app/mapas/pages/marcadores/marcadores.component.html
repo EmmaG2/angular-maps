@@ -3,7 +3,6 @@
   class="markers--item markers--item__add"
   (click)="agregarMarcador()">
     <div class="add">+</div> <span class="agregar">Agregar</span>
-  </li>
   <li
   class="markers--item"
   *ngFor="let marker of markersArray; let i = index"
@@ -13,6 +12,10 @@
   (contextmenu)="borrarMarcador( $event, i )"
   >
     Marker {{ i + 1 }}
+
+  <li
+  class="markers--item"
+  (click)="borrarTodo()">Borrar Todo
 </ul>
 
 <section *ngIf="showModal" class="modal">

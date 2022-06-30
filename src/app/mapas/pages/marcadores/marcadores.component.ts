@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
@@ -18,7 +18,7 @@ export class MarcadoresComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @ViewChild('map') MapaRef!: ElementRef;
 
-  constructor(private title: Title, private renderer2: Renderer2) { }
+  constructor(private title: Title) { }
 
   public mapa!: mapboxgl.Map;
   public center: [number, number] = [-104.60306427141977, 24.043922542308422];
@@ -134,6 +134,12 @@ export class MarcadoresComponent implements OnInit, OnDestroy, AfterViewInit {
     this.markersArray[i].marker?.remove();
     this.markersArray.splice(i, 1);
     this.guardarMarcadores();
+  }
+
+  public borrarTodo(): void {
+    this.markersArray.map(m => m.marker?.remove())
+    this.markersArray = [];
+    localStorage.removeItem('marcadores')
   }
 
 }
