@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } fr
 import { Title } from '@angular/platform-browser';
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
+import { LocalStorageService } from './local-storage.service';
 
 interface MarkerColor {
   color: string;
@@ -12,13 +13,14 @@ interface MarkerColor {
 @Component({
   selector: 'ez-marcadores',
   templateUrl: './marcadores.component.html',
-  styleUrls: ['./marcadores.component.scss']
+  styleUrls: ['./marcadores.component.scss'],
+  providers: [LocalStorageService]
 })
 export class MarcadoresComponent implements OnInit, OnDestroy, AfterViewInit {
 
   @ViewChild('map') MapaRef!: ElementRef;
 
-  constructor(private title: Title) { }
+  constructor(private title: Title, private localStorageService: LocalStorageService) { }
 
   public mapa!: mapboxgl.Map;
   public center: [number, number] = [-104.60306427141977, 24.043922542308422];
@@ -99,13 +101,15 @@ export class MarcadoresComponent implements OnInit, OnDestroy, AfterViewInit {
         center: [lng, lat]
       })
 
-      localStorage.setItem('marcadores', JSON.stringify(lngLatArray))
+      // localStorage.setItem('marcadores', JSON.stringify(lngLatArray))
+      this.localStorageService.setItem('marcadores', JSON.stringify(lngLatArray))
 
     })
   }
 
   public leerLocalStorage(): void {
-    if (!localStorage.getItem('marcadores')) return;
+    // if (!localStorage.getItem('marcadores')) return;
+    if (!this.localStorageService.getItem('marcadores')) return;
 
     const lngLatArray: MarkerColor[] = JSON.parse(localStorage.getItem('marcadores')!);
 
@@ -139,7 +143,8 @@ export class MarcadoresComponent implements OnInit, OnDestroy, AfterViewInit {
   public borrarTodo(): void {
     this.markersArray.map(m => m.marker?.remove())
     this.markersArray = [];
-    localStorage.removeItem('marcadores')
+    //localStorage.removeItem('marcadores')
+    this.localStorageService.removeItem('marcadores');
   }
 
 }
