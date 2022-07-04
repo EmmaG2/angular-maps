@@ -1,6 +1,10 @@
-import { Component, Input, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component,
+	Input,
+	OnInit,
+	AfterViewInit,
+	ViewChild,
+	ElementRef } from '@angular/core';
 import { environment } from 'src/environments/environment';
-
 import * as mapboxgl from 'mapbox-gl';
 
 @Component({
@@ -37,7 +41,5 @@ export class MiniMapaComponent implements AfterViewInit {
     })
       .setLngLat(this.lngLat)
       .addTo(mapa)
-
   }
-
 }
